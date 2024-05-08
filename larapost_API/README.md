@@ -24,3 +24,25 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ## License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+#Serving Your Application
+
+To serve your project locally, you may use the Laravel Homestead virtual machine, Laravel Valet, or the built-in PHP development server:
+
+php -S localhost:8260 -t public
+
+#Configuration
+
+All of the configuration options for the Lumen framework are stored in the .env file. Once Lumen is installed, you should also configure your local environment.
+
+
+#Application Key
+
+The next thing you should do after installing Lumen is set your application key to a random string. Typically, this string should be 32 characters long. The key can be set in the .env environment file. If you have not renamed the .env.example file to .env, you should do that now. If the application key is not set, your user encrypted data will not be secure!
+
+#Compatibility
+
+Since Lumen is a totally separate framework from Laravel, it does not intentionally offer compatibility with any additional Laravel libraries like Cashier, Passport, Scout, etc. If your application requires the functionality provided by these libraries, please use the Laravel framework.
