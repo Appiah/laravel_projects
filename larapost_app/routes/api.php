@@ -5,4 +5,6 @@ use Illuminate\Support\Facades\Request;
 
 Route::get('/all_posts', function(Request $request){
 
+
+    
 });
