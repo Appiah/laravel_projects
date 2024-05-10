@@ -13,7 +13,7 @@ const getInvoices = async () => {
     invoices.value = response.data.invoices
 }
 
-const handleNewInvoiceClick = function handleNewInvoiceClick(){
+const handleNewInvoiceClick = function (){
     console.log('handleNewInvoiceClick')
     //router.push('/user/new_invoice')
     alert("Please login to create a new invoice");
@@ -30,9 +30,9 @@ const handleNewInvoiceClick = function handleNewInvoiceClick(){
                 <h2 class="invoice__title">Invoices</h2>
             </div>
             <div>
-                <!--<a class="btn btn-secondary">-->
-                    <button @click={handleNewInvoiceClick}>New Invoice</button>
-                <!--</a>-->
+                <a class="btn btn-secondary" @click=handleNewInvoiceClick()>
+                    New Invoice
+                </a>
             </div>
         </div>
 

@@ -1,17 +1,43 @@
 <script setup>
+
+
 import { onMounted, ref } from "vue";
 
-let products = ref([])
+const products = [];// = ref([])
 
 onMounted(async()=>{
     getProducts()
 })
 
+
+const productsData = {
+        id: 1,
+        name: 'Product Kola Demo',
+        item_code: 'INV_8297937423492',
+        description: 'behold the description of the product',
+        currency_id: '$',
+        unit_price: '4700.00',
+        quantity: 1
+    }
+
 const getProducts = async () => {
     let response = await axios.get("/api/productsOnly")
     console.log('product response from DB in "index.vue" ', response)
-    products.value = response.data.products
+    //products.value = response.data.products
+    console.log('productsData', productsData);
+    
+        products.push(productsData)
+        products.push(productsData)
+        products.push(productsData)
+        products.push(productsData)
+    
+    console.log('products', products);
 }
+
+const handleAddProductClicked = function(){
+    alert("Please create a merchant account or login as a merchant to add a product");
+}
+
 </script>
 
 <template>
@@ -23,7 +49,7 @@ const getProducts = async () => {
                 <h2 class="product__title">Products</h2>
             </div>
             <div>
-                <a class="btn btn-secondary">
+                <a class="btn btn-secondary" @click="handleAddProductClicked()">
                     Add Product
                 </a>
             </div>
@@ -64,19 +90,19 @@ const getProducts = async () => {
 
             <div class="table--heading">
                 <p>ID</p>
+                <p>Product Code</p>
                 <p>Product Name</p>
                 <p>Product Description</p>
                 <p>Currency | Product Price</p>
-                
             </div>
 
             <!-- item 1 -->
-            <div class="table--items" v-for="item in products" :key="item.id" v-if="products.length > 0">
+            <div class="table--items" v-for="item in products " :key="item.id" v-if="products.length > 0">
                 <a href="#" class="table--items--transactionId">{{item.id}}</a>
-                <p>{{item.item_name}}</p>
-                <p>#{{item.description}}</p>
-                <p>{{item.currency_id}}</p>
-                <p>{{item.unit_price}}</p>
+                <p>{{item.item_code}}</p>
+                <p>{{item.name}}</p>
+                <p>{{item.description}}</p>
+                <p>{{item.currency_id}}{{item.unit_price}}</p>
             </div>
             <div class="table--items" v-else>
                 <p>Product not found</p>

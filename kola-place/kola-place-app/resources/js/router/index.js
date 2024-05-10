@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router"
 
 import invoiceIndex from '../components/invoice/index.vue'
 import productIndex from '../components/products/index.vue'
+import productmasonrylayout from "../components/products/productmasonrylayout.vue"
 import notFound from '../components/notfound.vue'
 
 const routes = [
@@ -12,6 +13,10 @@ const routes = [
     {
         path: '/products',
         component: productIndex
+    },
+    {
+        path: '/products/masonrylayout',
+        component: productmasonrylayout
     },
     {
         path: '/:pathMatch(.*)*',

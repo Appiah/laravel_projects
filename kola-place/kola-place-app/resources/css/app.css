@@ -673,3 +673,29 @@ ul {
 .grand__total--items span {
     font-size: 26px;
 }
+
+.primary {
+    background: #379c6f;
+    color: #fff;
+  }
+
+button {
+    border: none;
+    border-radius: 4px;
+    box-shadow: var(--shadow-base);
+    cursor: pointer;
+    padding: .5em 1em;
+    transition: filter .25s ease;
+  }
+
+  .masonry_tile{
+    border: none;
+    border-radius: 20px;
+    box-shadow: #ccddcc solid;
+    cursor: pointer;
+    padding: .5em 1em;
+    transition: filter .25s ease;
+  }
+
+
+ 
