@@ -1,38 +1,31 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
-let invoices = ref([])
+let products = ref([])
 
 onMounted(async()=>{
-    getInvoices()
+    getProducts()
 })
 
-const getInvoices = async () => {
-    let response = await axios.get("/get_all_invoice")
-    console.log('invoices response from DB in "index.vue"', response)
-    invoices.value = response.data.invoices
+const getProducts = async () => {
+    let response = await axios.get("/api/productsOnly")
+    console.log('product response from DB in "index.vue" ', response)
+    products.value = response.data.products
 }
-
-const handleNewInvoiceClick = function handleNewInvoiceClick(){
-    console.log('handleNewInvoiceClick')
-    //router.push('/user/new_invoice')
-    alert("Please login to create a new invoice");
-}
-
 </script>
 
 <template>
     <div class="container">
-        <div class="invoices">
+        <div class="product">
         
         <div class="card__header">
             <div>
-                <h2 class="invoice__title">Invoices</h2>
+                <h2 class="product__title">Products</h2>
             </div>
             <div>
-                <!--<a class="btn btn-secondary">-->
-                    <button @click={handleNewInvoiceClick}>New Invoice</button>
-                <!--</a>-->
+                <a class="btn btn-secondary">
+                    Add Product
+                </a>
             </div>
         </div>
 
@@ -50,7 +43,7 @@ const handleNewInvoiceClick = function handleNewInvoiceClick(){
                         </li>
                         <li>
                             <p class="table--filter--link ">
-                                Paid
+                                Wishlist
                             </p>
                         </li>
                     </ul>
@@ -59,36 +52,34 @@ const handleNewInvoiceClick = function handleNewInvoiceClick(){
 
             <div class="table--search">
                 <div class="table--search--wrapper">
-                    <select class="table--search--select" name="" id="">
+                    <select class="table--search--select" name="product_search" id="">
                         <option value="">Filter</option>
                     </select>
                 </div>
                 <div class="relative">
                     <i class="table--search--input--icon fas fa-search "></i>
-                    <input class="table--search--input" type="text" placeholder="Search invoice">
+                    <input class="table--search--input" type="text" placeholder="Search Product">
                 </div>
             </div>
 
             <div class="table--heading">
                 <p>ID</p>
-                <p>Date</p>
-                <p>Number</p>
-                <p>Customer</p>
-                <p>Due Date</p>
-                <p>Total</p>
+                <p>Product Name</p>
+                <p>Product Description</p>
+                <p>Currency | Product Price</p>
+                
             </div>
 
             <!-- item 1 -->
-            <div class="table--items" v-for="item in invoices" :key="item.id" v-if="invoices.length > 0">
+            <div class="table--items" v-for="item in products" :key="item.id" v-if="products.length > 0">
                 <a href="#" class="table--items--transactionId">{{item.id}}</a>
-                <p>{{item.date}}</p>
-                <p>#{{item.number}}</p>
-                <p>{{item.customer_id}}</p>
-                <p>{{item.due_date}}</p>
-                <p>{{item.grand_total}}</p>
+                <p>{{item.item_name}}</p>
+                <p>#{{item.description}}</p>
+                <p>{{item.currency_id}}</p>
+                <p>{{item.unit_price}}</p>
             </div>
             <div class="table--items" v-else>
-                <p>Invoice not found</p>
+                <p>Product not found</p>
             </div>
         </div>
         

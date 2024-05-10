@@ -8,7 +8,7 @@
 <body>
     <div style="border; 3px solid black;">
     <h2>All Invoices</h2>
-    @foreach($invoicesAll as $invoice)
+    @foreach($invoices as $invoice)
         <div style="background-color: gray; padding: 10px; margin: 10px;">
             <h3>{{ $invoice['id'] }}</h3>
         </div>

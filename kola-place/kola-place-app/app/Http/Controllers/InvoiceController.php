@@ -5,25 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class InvoiceController extends Controller{
     
     public function getAllInvoices(){
 
         $invoices = Invoice::all();
-
-        //ddd($invoices);
-
-        //var_dump($invoices);
-
-        //$invoices = Invoice::with('customer')->orderBy('id', 'DESC')->get();
-
-        //$invoices = DB::select("SELECT * FROM invoices");
-
-        //$invoices = DB::table('invoices')->get();
-
-        //echo "<script>console.log('response from DB in \"InvoiceController\" ', ".$invoices.")</script>";
-
 
         return response()->json([
             'invoices' => $invoices
@@ -32,8 +20,8 @@ class InvoiceController extends Controller{
     }
 
     public function getAllInvoicesView(){
-        $invoicesAll = Invoice::all();
-        return view('invoicelisttest', ['invoicesAll' => $invoicesAll]);
+        $invoices = Invoice::all();
+        return view('invoicelisttest', ['invoices' => $invoices]);
     }
 
 }

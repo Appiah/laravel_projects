@@ -7,13 +7,28 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InvoiceItemController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('invoiceslistviavuejs');
 });
 
-Route::get('/home', function(){
-    return "<head><title>Larapost App</title></head><h1>Hello World...123</h2>";//view('home');
+Route::get('/view_all_products', function(Request $request){
+    return view('productslist');
 });
 
+Route::get('/view_all_invoices', function(){
+    return view('invoicelisttest');
+});
+
+Route::get('/view_invoices_list_preview', function(){
+    return view('productslist');
+});
+  
+
+Route::get('/{pathMatch}', function(){
+    return view('productslistviavuejs');
+})->where('pathMatch', '.*');
+
+
+//Later to be developed
 Route::get('/signup', function(Request $request){
 
 });
@@ -42,15 +57,3 @@ Route::get('/logout', function(Request $request){
 
 });
 
-Route::get('/view_all_products', function(Request $request){
-    
-});
-
-Route::get('/view_all_invoices', function(){
-    return view('invoicelisttest');
-});
-  
-
-Route::get('/{pathMatch}', function(){
-    return view('welcome');
-})->where('pathMatch', '.*');
