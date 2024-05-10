@@ -14,8 +14,7 @@ class InvoiceItemFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
-    {
+    public function definition(): array {
         return [
             
             'invoice_id' => $this->faker->numberBetween(1, 3),

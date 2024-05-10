@@ -12,6 +12,10 @@
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^5.0.4",
-        "vue": "^3.4.27"
+        "masonry-layout": "^4.2.2",
+        "vue": "^3.4.27",
+        "vue-loader": "^17.4.2",
+        "vue-route": "^1.5.1",
+        "vue-router": "^4.3.2"
     }
 }
