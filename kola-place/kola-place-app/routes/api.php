@@ -30,10 +30,11 @@ Route::get('/productsOnly', [ProductController::class, 'getAllProductsForVueJS']
 Route::get('/products/:id', [ProductController::class, 'getProductDetails($id)']);
 
 
+//Create a page to list all available invoices that are retrieved from the API endpoint
 Route::get('/invoices', [InvoiceController::class, 'getAllInvoicesView']);
-    //Create a page to list all available invoices that are retrieved from the API endpoint
     
-
+    
+//When an invoice item is clicked, it should display a details page which pulls information from here
 Route::get('/invoices/:id', [InvoiceItemController::class, 'getInvoiceItem($id)']);
-    //When an invoice item is clicked, it should display a details page which pulls information from here
+    
   

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InvoiceItemController;
+use App\Http\Controllers\UploadProductImage;
 
 Route::get('/', function () {
     return view('invoiceslistviavuejs');
@@ -56,4 +57,30 @@ Route::get('/login', function(Request $request){
 Route::get('/logout', function(Request $request){
 
 });
+
+Route::get('/login/auth/google', function(Request $request){
+
+});
+
+Route::get('/login/auth/x', function(Request $request){
+
+});
+
+Route::get('/login/auth/meta', function(Request $request){
+
+});
+
+Route::get('/login/auth/linkedin', function(Request $request){
+
+});
+
+Route::get('/create/product', function(Request $request){
+
+});
+
+Route::get('/create/invoice', function(Request $request){
+
+});
+
+Route::post('/upload/productimage', [UploadProductImage::class, 'processProductImageBaseOnRequest($request)']);
 
