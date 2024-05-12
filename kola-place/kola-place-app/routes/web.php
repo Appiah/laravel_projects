@@ -23,10 +23,11 @@ Route::get('/view_invoices_list_preview', function(){
     return view('productslist');
 });
   
-
+/*
 Route::get('/{pathMatch}', function(){
     return view('productslistviavuejs');
 })->where('pathMatch', '.*');
+*/
 
 
 //Later to be developed

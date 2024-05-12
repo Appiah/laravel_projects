@@ -13,9 +13,22 @@ return new class extends Migration
     {
         Schema::create('fetch_product_images', function (Blueprint $table) {
             $table->id();
+            
             $table->string('product_id');
-            $table->string('image_url_0');
-            $table->string('image_url_1');
+        
+            $table->string('image_path_0');
+            $table->string('image_alt_txt_0');
+            $table->string('image_description_0');
+
+            $table->string('image_path_1');
+            $table->string('image_alt_txt_1');
+            $table->string('image_description_1');
+
+            /*this would be used to decide if there are more than 2 images 
+            available, there would be another table dedicated to storing more 
+            multimedia content */
+            $table->string('product_multimedia_total');
+            
             $table->softDeletes();
             $table->timestamps();
         });

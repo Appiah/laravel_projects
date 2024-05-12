@@ -26,6 +26,7 @@ const getProducts = async () => {
     //products.value = response.data.products
     console.log('productsData', productsData);
     
+        //temporal improvision to get a few products displayed
         products.push(productsData)
         products.push(productsData)
         products.push(productsData)

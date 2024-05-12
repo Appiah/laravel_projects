@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProductController;
@@ -36,5 +37,7 @@ Route::get('/invoices', [InvoiceController::class, 'getAllInvoicesView']);
     
 //When an invoice item is clicked, it should display a details page which pulls information from here
 Route::get('/invoices/:id', [InvoiceItemController::class, 'getInvoiceItem($id)']);
+
+Route::get('/getproductimagerand', [PullImageForProduct::class, 'pullImageForProductDef']);
     
   
