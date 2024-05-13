@@ -17,17 +17,17 @@ return new class extends Migration
             $table->string('product_id');
         
             $table->string('image_path_0');
-            $table->string('image_alt_txt_0');
-            $table->string('image_description_0');
+            $table->string('image_alt_txt_0')->default('null');
+            $table->string('image_description_0')->default('null');
 
-            $table->string('image_path_1');
-            $table->string('image_alt_txt_1');
-            $table->string('image_description_1');
+            $table->string('image_path_1')->default('null');
+            $table->string('image_alt_txt_1')->default('null');
+            $table->string('image_description_1')->default('null');
 
             /*this would be used to decide if there are more than 2 images 
             available, there would be another table dedicated to storing more 
             multimedia content */
-            $table->string('product_multimedia_total');
+            $table->integer('product_multimedia_total')->default(1);
             
             $table->softDeletes();
             $table->timestamps();

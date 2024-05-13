@@ -18,10 +18,16 @@ class FetchProductImageFactory extends Factory
     {
         return [
             'product_id' => rand(1, 10),
-            'image' => 'Product Name'.rand(10, 1000),
-            'description' => 'Description of Product is '.rand(10, 1000),
-            'currency_id' => '1',//during the creation this can be properly affixed
-            'unit_price' => mt_rand(50, 10000)
+            'image_path_0' => rand(1111111,9999999) . '_' . now() . '_' . '.jpg',
+        
+            'image_alt_txt_0' => $this->faker->text,
+            'image_description_0' => $this->faker->text,
+
+            //'image_path_1' => rand(1111111,9999999) . '_' . now() . '_' . '.jpg',
+            //'image_alt_txt_1' => $this->faker->text,
+            //'image_description_1' => $this->faker->text,
+
+            //'product_multimedia_total')->default(1);
         ];
     }
 }
