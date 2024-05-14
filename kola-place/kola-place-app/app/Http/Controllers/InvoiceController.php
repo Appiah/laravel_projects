@@ -20,7 +20,8 @@ class InvoiceController extends Controller{
     }
 
     public function getAllInvoicesView(){
-        $invoices = Invoice::all();
+        //$invoices = Invoice::all();
+        $invoices = Invoice::with('customer')->orderBy('id', 'DESC')->get();
         return view('invoicelisttest', ['invoices' => $invoices]);
     }
 

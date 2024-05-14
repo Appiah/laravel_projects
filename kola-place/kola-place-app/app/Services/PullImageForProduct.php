@@ -4,7 +4,7 @@ use GuzzleHttp\Client;
 
 class PullImageForProduct extends GuzzleHttp\Client{
 
-    public function pullImageForProduct(string $imageUrl){
+    public static function pullImageForProduct(string $imageUrl){
         
         $client = new Client();
 
@@ -25,7 +25,7 @@ class PullImageForProduct extends GuzzleHttp\Client{
         }
     }
 
-    public function pullImageForProductDef(){
+    public static function pullImageForProductDef(){
         $imageUrl = env('API_URL_NINJA_IMAGES');
         $client = new Client();
 

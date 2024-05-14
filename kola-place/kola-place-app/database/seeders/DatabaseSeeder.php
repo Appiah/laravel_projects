@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\InvoiceItem::factory(3)->create(); //DONE
 
-        \App\Models\FetchProductImage::factory(4)->create(); //DONE
+        // \App\Models\FetchProductImage::factory(4)->create(); //DONE
         
 
     }

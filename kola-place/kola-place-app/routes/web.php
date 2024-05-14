@@ -8,8 +8,13 @@ use App\Http\Controllers\InvoiceItemController;
 use App\Http\Controllers\UploadProductImage;
 
 Route::get('/', function () {
+    return view('productslist');
+});
+
+Route::get('/invoiceslistviavuejs', function () {
     return view('invoiceslistviavuejs');
 });
+
 
 Route::get('/view_all_products', function(Request $request){
     return view('productslist');

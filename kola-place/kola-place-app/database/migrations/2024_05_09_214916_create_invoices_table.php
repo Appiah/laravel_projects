@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('number')->unique();
             $table->integer('merchant_id')->unsigned();
+            
             $table->integer('customer_id')->unsigned();
+            //$table->foreignId('customer_id')->constrained();
+            
             $table->integer('related_invoice_id')->default(0);
             $table->string('payments_ratios_id')->default(0);
             $table->date('date');
