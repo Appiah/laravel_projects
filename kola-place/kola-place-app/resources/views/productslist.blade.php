@@ -6,10 +6,11 @@
     <title>Products List</title>
 </head>
 <body>
+    <center>
     <div style="border; 3px solid black;">
         <h2>All Products</h2>
         @foreach($products as $product)
-            <div style="width: 300px; height: 400px; background-color: gray; padding: 5px; margin: 5px;">
+            <div style="width: 300px; height: 400px; background-color: #cdcdcd; padding: 5px; margin: 5px;">
                 <div>
                     <input type="checkbox" name="add_product" id="add_product" value="add" style="position: absolute;"/>
                     <br>
@@ -49,5 +50,6 @@
            
         @endforeach
         </div>
+    </center>
 </body>
 </html>

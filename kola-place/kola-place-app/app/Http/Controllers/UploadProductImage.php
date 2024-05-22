@@ -21,8 +21,7 @@ class UploadProductImage extends Controller{
         //$ipAddresses = $request->ips();//returns an array of IP addresses, and the last one is the client IP address
 
         //if ($request->expectsJson()) {}
-
-
+        
         $incomingFields = $request->all();
 
         //Remember to put variables here to check for the presence of the required fields

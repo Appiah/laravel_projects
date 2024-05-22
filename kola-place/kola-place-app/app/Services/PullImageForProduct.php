@@ -27,6 +27,7 @@ class PullImageForProduct extends GuzzleHttp\Client{
 
     public static function pullImageForProductDef(){
         $imageUrl = env('API_URL_NINJA_IMAGES');
+        $imageUrl = "http://127.0.0.1:8000/api/postmantest";
         $client = new Client();
 
         try {
