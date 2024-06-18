@@ -1,9 +1,10 @@
 <template>
   <div>
+    <!-- https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg -->
     <img
       class="mx-auto h-12 w-auto"
-      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-      alt="Workflow"
+      src="https://www.aireceive.com/web/wp-content/uploads/2017/12/aireceive_new_logo.png"
+      alt="aireceive_survey_logo"
     />
     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
       Sign in to your account

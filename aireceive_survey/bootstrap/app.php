@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -40,6 +43,34 @@ $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
+
+
+/*Adding the following lines to deal with the CORS issue of Laravel communicating
+with the vue + vite application
+*/
+
+/*
+//return Application::configure(basePath: dirname(__DIR__))
+->withRouting(
+    web: __DIR__.'/../routes/web.php',
+    commands: __DIR__.'/../routes/console.php',
+    health: '/up',
+);
+->withMiddleware(function (Middleware $middleware) {
+    $middleware->append(\Illuminate\Http\Middleware\HandleCors::class);
+    $middleware->validateCsrfTokens(except: [
+        env('APP_URL') . '/researchjspost'
+    ]);
+    $middleware->pushMiddleware(Cors::class); // Register Cors middleware
+});
+->withExceptions(function (Exceptions $exceptions) {
+
+    //
+});
+->create();
+*/
+
+
 
 /*
 |--------------------------------------------------------------------------
